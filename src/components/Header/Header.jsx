@@ -13,7 +13,7 @@ function Header() {
                     <h1 className="sr-only">Argent Bank</h1>
                 </Link>
                 <div>
-                    <Link to="/Sign-in" className="main-nav-item">
+                    <Link to="/signIn" className="main-nav-item">
                         <FontAwesomeIcon icon={faUserCircle} />
                         Sign In
                     </Link>

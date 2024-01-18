@@ -19,6 +19,11 @@ body {
     flex: 1;
 }
 
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
 .bg-dark {
     background-color: #12002b;
 }
