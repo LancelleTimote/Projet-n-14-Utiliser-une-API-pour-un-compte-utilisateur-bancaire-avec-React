@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import "./SignIn.scss";
+import Input from "../../components/Input/Input";
 
 function SignIn() {
     return (
@@ -14,18 +15,9 @@ function SignIn() {
                     <FontAwesomeIcon className="sign-in-icon" icon={faUserCircle} />
                     <h1>Sign In</h1>
                     <form>
-                        <div className="input-wrapper">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" />
-                        </div>
-                        <div className="input-wrapper">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" />
-                        </div>
-                        <div className="input-remember">
-                            <input type="checkbox" id="remember-me" />
-                            <label for="remember-me">Remember me</label>
-                        </div>
+                        <Input wrapperClass={"input-wrapper"} labelFor={"username"} labelText={"Username"} inputType={"text"} inputId={"username"} />
+                        <Input wrapperClass={"input-wrapper"} labelFor={"password"} labelText={"Password"} inputType={"password"} inputId={"password"} />
+                        <Input wrapperClass={"input-remember"} labelFor={"remember-me"} labelText={"Remember me"} inputType={"checkbox"} inputId={"remember-me"} />
                         {/* PLACEHOLDER DUE TO STATIC SITE */}
                         <a href="./user.html" className="sign-in-button">
                             Sign In

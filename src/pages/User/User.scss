@@ -1,12 +1,14 @@
+@import "../../style/Utils/Variables.scss";
+
 .edit-button {
-    border-color: #00bc77;
-    background-color: #00bc77;
-    color: #fff;
+    border-color: $secondary-color;
+    background-color: $secondary-color;
+    color: $primary-color;
     font-weight: bold;
     padding: 10px;
 }
 
 .header {
-    color: #fff;
+    color: $primary-color;
     margin-bottom: 2rem;
 }
