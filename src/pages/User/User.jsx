@@ -2,8 +2,11 @@ import "./User.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Account from "../../components/Account/Account";
+import { useSelector } from "react-redux";
 
 function User() {
+    const user = useSelector((state) => state.user);
+
     return (
         <div>
             <Header />
@@ -12,7 +15,7 @@ function User() {
                     <h1>
                         Welcome back
                         <br />
-                        Tony Jarvis!
+                        {user.firstName} {user.lastName}
                     </h1>
                     <button className="edit-button">Edit Name</button>
                 </div>
