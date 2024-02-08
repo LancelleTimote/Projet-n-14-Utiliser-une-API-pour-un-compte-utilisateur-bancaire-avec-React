@@ -2,10 +2,17 @@ import "./User.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Account from "../../components/Account/Account";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserData } from "../../store/userSlice";
 
 function User() {
+    const dispatch = useDispatch();
     const user = useSelector((state) => state.user);
+
+    useEffect(() => {
+        dispatch(fetchUserData());
+    }, [dispatch]);
 
     return (
         <div>
@@ -15,7 +22,13 @@ function User() {
                     <h1>
                         Welcome back
                         <br />
-                        {user.firstName} {user.lastName}
+                        {user.loading ? (
+                            <p>Chargement...</p>
+                        ) : (
+                            <>
+                                {user.firstName} {user.lastName}
+                            </>
+                        )}
                     </h1>
                     <button className="edit-button">Edit Name</button>
                 </div>
