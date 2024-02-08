@@ -15,6 +15,9 @@
     &-item {
         text-decoration: none;
         margin-right: 0.5rem;
+        &-icon {
+            margin-right: 5px;
+        }
     }
     &-item:hover {
         text-decoration: underline;

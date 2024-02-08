@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Projet n°14 : Utiliser une API pour un compte utilisateur bancaire avec React (partie front-end)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub contributors](https://img.shields.io/github/contributors/LancelleTimote/Projet-n-14-Utiliser-une-API-pour-un-compte-utilisateur-bancaire-avec-React-partie-front-end?style=for-the-badge&color=green)
+![GitHub language count](https://img.shields.io/github/languages/count/LancelleTimote/Projet-n-14-Utiliser-une-API-pour-un-compte-utilisateur-bancaire-avec-React-partie-front-end?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/LancelleTimote/Projet-n-14-Utiliser-une-API-pour-un-compte-utilisateur-bancaire-avec-React-partie-front-end?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/LancelleTimote/Projet-n-14-Utiliser-une-API-pour-un-compte-utilisateur-bancaire-avec-React-partie-front-end?style=for-the-badge)
+![GitHub License](https://img.shields.io/github/license/LancelleTimote/Projet-n-14-Utiliser-une-API-pour-un-compte-utilisateur-bancaire-avec-React-partie-front-end?style=for-the-badge)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/timote-lancelle-devweb/)
 
-## Available Scripts
+## :mag: Aperçu
 
-In the project directory, you can run:
+![Aperçu du site web](visuel_projet/visuel_projet.png)
 
-### `npm start`
+## :bookmark_tabs: Sommaire
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<ol>
+    <li><a href="#sujet">Sujet</a></li>
+    <li><a href="#demandes_respecter">Demandes à respecter</a></li>
+    <li><a href="#objectifs_projet">Objectifs du projet</a></li>
+    <li><a href="#technologies_utilisees">Technologies utilisées</a></li>
+    <li><a href="#prerequis">Prérequis</a></li>
+    <li><a href="#installation">Installation</a></li>
+    <li><a href="#utilisation_siteweb">Utilisation du site web</a></li>
+    <li><a href="#auteurs_contributeurs">Auteurs et contributeurs</a></li>
+    <li><a href="#licence">Licence</a></li>
+</ol>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :page_facing_up: 1. Sujet <a name = "sujet"></a>
 
-### `npm test`
+Vous venez de commencer à travailler chez Remede Agency, une agence spécialisée dans le développement d'applications web.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+L'équipe est principalement composée de développeurs back-end et vient de commencer à recruter d'autres spécialistes front-end.
 
-### `npm run build`
+Le projet concerne une nouvelle banque qui démarre, Argent Bank, qui essaie de percer dans le secteur et qui a besoin d'aide pour mettre en place son application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Phase 1 : Authentification des utilisateurs - Création d'une application web permettant aux clients de se connecter et de gérer leurs comptes et leur profil.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Phase 2 : Transactions - Spécifier les endpoints d’API nécessaires pour une éventuelle deuxième mission.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## :memo: 2. Demandes à respecter <a name = "demandes_respecter"></a>
 
-### `npm run eject`
+-   Faire évoluer l'application web statique qui n'utilise que le HTML et CSS, en une application web dynamique, en utilisant React et React Router ;
+-   Utiliser Redux ToolKit pour gérer l'état de l'application ;
+-   Utiliser l'outil Swagger pour retrouver les requêtes API existantes, et la modélisation future de l'API.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## :checkered_flag: 3. Objectifs du projet <a name = "objectifs_projet"></a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   Apprendre à utiliser React, React Router, Redux ToolKit, Swagger.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## :computer: 4. Technologies utilisées <a name = "technologies_utilisees"></a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   HTML
+-   CSS / Sass
+-   JavaScript / React.js
+-   Swagger
+-   Git & GitHub
 
-## Learn More
+## :exclamation: 5. Prérequis <a name = "prerequis"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   Avoir fait le necéssaire avec la partie back-end disponible ici : https://github.com/LancelleTimote/Projet-n-14-Utiliser-une-API-pour-un-compte-utilisateur-bancaire-avec-React-partie-back-end
+-   Avoir Node.js v12 d'installer sur son PC.
+-   Avoir MongoDB d'installer sur son PC.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## :wrench: 6. Installation <a name = "installation"></a>
 
-### Code Splitting
+-   Cloner ce repository.
+-   Pour installer les différents packages, dans le terminal à partir du dossier front-end, exécuter npm install.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## :question: 7. Utilisation du site web <a name = "utilisation_siteweb"></a>
 
-### Analyzing the Bundle Size
+-   Dans le terminal à partir du dossier back-end, exécuter npm run dev:server ;
+-   Toujours dans le terminal à partir du dossier back-end, exécuter npm run populate-db ;
+-   Dans le terminal à partir du dossier front-end, exécuter npm start ;
+-   L'application est disponible sur : http://localhost:3000/
+-   Dans la base de donnée il existe deux utilisateurs :
+    Tony Stark
+    First Name: Tony
+    Last Name: Stark
+    Email: tony@stark.com
+    Password: password123
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+    Steve Rogers
+    First Name: Steve,
+    Last Name: Rogers,
+    Email: steve@rogers.com,
+    Password: password456
 
-### Making a Progressive Web App
+-   Une fois que l'environnement local est demarré, pour avoir plus d'informations sur le fonctionnement de l'API, une documentation est disponible ici : http://localhost:3001/api-docs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## :beers: 8. Auteurs et Contributeurs <a name = "auteurs_contributeurs"></a>
 
-### Advanced Configuration
+Timoté Lancelle : [GitHub](https://github.com/LancelleTimote) / [LinkedIn](https://www.linkedin.com/in/timote-lancelle-devweb/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## :page_with_curl: 9. Licence <a name = "licence"></a>
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Distribué sous la licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus d'informations.
