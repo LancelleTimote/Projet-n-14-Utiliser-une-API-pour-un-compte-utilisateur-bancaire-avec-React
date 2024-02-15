@@ -1,23 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
-const userSlice = createSlice({
+const initialState = {
+    userData: {},
+    loading: false,
+    error: null,
+};
+
+export const userSlice = createSlice({
     name: "user",
-    initialState: {
-        lastName: "",
-        firstName: "",
-        email: "",
-        password: "",
-        token: "",
-        loading: false,
-        error: null,
-    },
+    initialState,
     reducers: {
-        setUser: (state, action) => {
-            const { email, password, token } = action.payload;
-            state.email = email;
-            state.password = password;
-            state.token = token;
+        setUserProfile: (state, action) => {
+            state.userData = action.payload;
             state.loading = false;
             state.error = null;
         },
@@ -31,20 +25,6 @@ const userSlice = createSlice({
     },
 });
 
-export const { setUser, setLoading, setError } = userSlice.actions;
-
-export const loginUser = (userData) => async (dispatch) => {
-    try {
-        dispatch(setLoading(true));
-        const response = await axios.post("http://localhost:3001/api/v1/user/login", userData);
-        const { token } = response.data;
-        localStorage.setItem("token", token);
-        dispatch(setUser({ email: userData.email, password: userData.password, token }));
-    } catch (error) {
-        dispatch(setError(error.message));
-    } finally {
-        dispatch(setLoading(false));
-    }
-};
+export const { setUserProfile, setLoading, setError } = userSlice.actions;
 
 export default userSlice.reducer;
