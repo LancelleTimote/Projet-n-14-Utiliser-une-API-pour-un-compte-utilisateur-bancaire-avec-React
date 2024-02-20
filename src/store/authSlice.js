@@ -17,14 +17,12 @@ export const authSlice = createSlice({
             state.token = action.payload.token;
             state.error = null;
         },
-        // logout: (state) => {
-        //     state.isLoggedIn = false;
-        //     state.user = null;
-        //     state.error = null;
-        // },
+        setToken: (state, action) => {
+            state.token = action.payload;
+        },
     },
 });
 
-export const { loginSuccess, logout } = authSlice.actions;
+export const { loginSuccess, setToken } = authSlice.actions;
 
 export default authSlice.reducer;

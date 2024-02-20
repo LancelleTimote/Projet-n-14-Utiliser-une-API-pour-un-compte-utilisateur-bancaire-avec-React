@@ -9,9 +9,8 @@ import Input from "../../components/Input/Input";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser, fetchUserProfile } from "../../store/authThunk";
-import { loginSuccess, setToken } from "../../store/authSlice";
-import { setUserProfile } from "../../store/userSlice";
-// import { useNavigate } from "react-router-dom";
+import { loginSuccess } from "../../store/authSlice";
+import { setToken } from "../../store/authSlice";
 
 function SignIn() {
     const [email, setEmail] = useState("");
@@ -19,27 +18,6 @@ function SignIn() {
     const [errorMessage, setErrorMessage] = useState("");
 
     const dispatch = useDispatch();
-
-    // const handleInputChange = (e) => {
-    //     console.log(e.target);
-    //     setFormData({
-    //         ...formData,
-    //         [e.target.name]: e.target.value,
-    //     });
-    // };
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     console.log(formData);
-    //     const result = dispatch(loginUser(formData));
-    //     console.log(result);
-    //     // .then((result) => {
-    //     //     navigate("/user");
-    //     // })
-    //     // .catch((error) => {
-    //     //     console.error("Error during login:", error);
-    //     // });
-    // };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -52,8 +30,7 @@ function SignIn() {
             const response = await dispatch(loginUser({ email, password })).unwrap();
 
             if (rememberMe) {
-                localStorage.setItem("userToken", response.token);
-                // dispatch(setToken("userToken", response.token));
+                dispatch(setToken(response.token));
             }
 
             dispatch(
@@ -63,11 +40,7 @@ function SignIn() {
                 })
             );
 
-            dispatch(fetchUserProfile(response.token)).then((action) => {
-                if (action.type === "user/fetchUserProfile/fulfilled") {
-                    dispatch(setUserProfile(action.payload));
-                }
-            });
+            dispatch(fetchUserProfile());
         } catch (error) {
             setErrorMessage(error.message || "Failed to login, please try again.");
         }
