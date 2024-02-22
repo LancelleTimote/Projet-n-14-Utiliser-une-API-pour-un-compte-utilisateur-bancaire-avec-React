@@ -2,7 +2,6 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 import "./SignIn.scss";
 import Input from "../../components/Input/Input";
 
@@ -17,22 +16,27 @@ function SignIn() {
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
+    //init dispatch pour envoyer actions au store
     const dispatch = useDispatch();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        //besoin de réint le message d'erreur
         setErrorMessage("");
 
         try {
             const rememberMe = document.getElementById("remember-me").checked;
             console.log("Remember Me coché:", rememberMe);
 
+            //appel du thunk loginUser pour la co
             const response = await dispatch(loginUser({ email, password })).unwrap();
 
+            //si remember coché, enregistrement du token
             if (rememberMe) {
                 dispatch(setToken(response.token));
             }
 
+            //dispatch action co réussi
             dispatch(
                 loginSuccess({
                     token: response.token,
@@ -65,9 +69,6 @@ function SignIn() {
                         {/* SHOULD BE THE BUTTON BELOW
                         <button className="sign-in-button">Sign In</button> */}
                     </form>
-                    <Link to="/signIn" className="main-nav-logo">
-                        Sign In
-                    </Link>
                 </section>
             </div>
             <Footer />

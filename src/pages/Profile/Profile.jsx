@@ -2,7 +2,6 @@ import "./Profile.scss";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Account from "../../components/Account/Account";
-import React, { useEffect } from "react";
 
 function Profile() {
     return (

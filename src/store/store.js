@@ -4,7 +4,9 @@ import userReducer from "./userSlice";
 
 const store = configureStore({
     reducer: {
+        //reducer gestion auth
         auth: authReducer,
+        //reducer gestion données user
         user: userReducer,
     },
 });
