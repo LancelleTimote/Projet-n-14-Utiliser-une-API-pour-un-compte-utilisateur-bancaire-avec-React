@@ -16,7 +16,7 @@ function SignIn() {
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
-    //init dispatch pour envoyer actions au store
+    //init dispatch pour envoyer actions à Redux
     const dispatch = useDispatch();
 
     const handleSubmit = async (e) => {
