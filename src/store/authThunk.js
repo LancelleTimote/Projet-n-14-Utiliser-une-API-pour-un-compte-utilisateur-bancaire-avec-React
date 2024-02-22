@@ -7,7 +7,7 @@ export const loginUser = createAsyncThunk("auth/loginUser", async ({ email, pass
     try {
         const response = await axios.post("http://localhost:3001/api/v1/user/login", { email, password });
 
-        console.log("Token retourné dans le login: ", response.data.body.token);
+        console.log("Token retourné dans le login : ", response.data.body.token);
 
         thunkAPI.dispatch(setToken(response.data.body.token));
         return thunkAPI.fulfillWithValue(response.data.body);
@@ -29,9 +29,9 @@ export const fetchUserProfile = createAsyncThunk("user/fetchUserProfile", async 
                 },
             }
         );
-        thunkAPI.dispatch(setUserProfile(response.data));
+        return response.data.body;
     } catch (error) {
-        // thunkAPI.dispatch(setError(error.response?.data?.message || error.message));
+        return thunkAPI.rejectWithValue(error.response?.data?.message || error.message);
     }
 });
 

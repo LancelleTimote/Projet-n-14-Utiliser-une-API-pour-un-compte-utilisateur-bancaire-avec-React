@@ -3,18 +3,18 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Error from "./pages/ErrorPage/ErrorPage";
 import Home from "./pages/Home/Home";
 import SignIn from "./pages/SignIn/SignIn";
-import User from "./pages/User/User";
-import Store from "./store/store";
+import Profile from "./pages/Profile/Profile";
+import store from "./store/store";
 
 function App() {
     return (
         <Router>
             <main className="main flex">
-                <Provider store={Store}>
+                <Provider store={store}>
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/signIn" element={<SignIn />} />
-                        <Route path="/user" element={<User />} />
+                        <Route path="/profile" element={<Profile />} />
                         <Route path="*" element={<Error />} />
                     </Routes>
                 </Provider>
