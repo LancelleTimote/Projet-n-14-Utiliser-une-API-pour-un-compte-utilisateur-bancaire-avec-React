@@ -44,3 +44,23 @@ export const fetchUserProfile = createAsyncThunk("user/fetchUserProfile", async 
         return thunkAPI.rejectWithValue(error.response?.data?.message || error.message);
     }
 });
+
+//thunk async pour màj le profil user
+export const updateUserName = createAsyncThunk("user/updateUserName", async ({ token, newFirstName, newLastName }, thunkAPI) => {
+    try {
+        const response = await axios.put(
+            "http://localhost:3001/api/v1/user/profile",
+            { firstName: newFirstName, lastName: newLastName },
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                    "Content-Type": "application/json",
+                },
+            }
+        );
+        //retourner les nouvelles infos users màj
+        return response.data.body;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.response?.data?.message || error.message);
+    }
+});
