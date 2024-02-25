@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { logout } from "./authSlice";
 
 //état initial du slice de l'user
 const initialState = {
@@ -17,9 +18,18 @@ export const userSlice = createSlice({
             //màj des données user
             state.userData = action.payload;
         },
+        resetUser: (state) => {
+            state.userData = {};
+        },
+    },
+    extraReducers: (builder) => {
+        builder.addCase(logout, (state) => {
+            //réinitialise les données de l'utilisateur lors de la déconnexion
+            state.userData = {};
+        });
     },
 });
 
-export const { setUserProfile } = userSlice.actions;
+export const { setUserProfile, resetUser } = userSlice.actions;
 
 export default userSlice.reducer;

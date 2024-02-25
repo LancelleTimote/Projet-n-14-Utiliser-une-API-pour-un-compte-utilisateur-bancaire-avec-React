@@ -32,9 +32,20 @@ export const authSlice = createSlice({
             //save du token
             state.token = action.payload;
         },
+        //pour gérer la déco
+        logout: (state) => {
+            //on réinit l'état de co
+            state.isLoggedIn = false;
+            //suppr des infos user
+            state.user = null;
+            //suppr du token
+            state.token = null;
+            //suppr des erreurs
+            state.error = null;
+        },
     },
 });
 
-export const { loginSuccess, setToken } = authSlice.actions;
+export const { loginSuccess, setToken, logout } = authSlice.actions;
 
 export default authSlice.reducer;

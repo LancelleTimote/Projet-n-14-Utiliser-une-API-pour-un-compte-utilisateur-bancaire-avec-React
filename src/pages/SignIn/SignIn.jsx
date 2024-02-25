@@ -61,13 +61,10 @@ function SignIn() {
                         <Input wrapperClass={"input-wrapper"} name="email" labelFor={"email"} labelText={"Email"} inputType={"text"} inputId={"email"} onChange={(e) => setEmail(e.target.value)} />
                         <Input wrapperClass={"input-wrapper"} name="password" labelFor={"password"} labelText={"Password"} inputType={"password"} inputId={"password"} onChange={(e) => setPassword(e.target.value)} />
                         <Input wrapperClass={"input-remember"} labelFor={"remember-me"} labelText={"Remember me"} inputType={"checkbox"} inputId={"remember-me"} />
-                        {/* PLACEHOLDER DUE TO STATIC SITE */}
                         {errorMessage && <p className="error-message">{errorMessage}</p>}
                         <button type="submit" className="sign-in-button">
                             Sign In
                         </button>
-                        {/* SHOULD BE THE BUTTON BELOW
-                        <button className="sign-in-button">Sign In</button> */}
                     </form>
                 </section>
             </div>

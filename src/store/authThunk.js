@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { setToken } from "./authSlice";
+import { setUserProfile } from "./userSlice";
 
 //thunk async pour la co utilisateur
 export const loginUser = createAsyncThunk("auth/loginUser", async ({ email, password }, thunkAPI) => {
@@ -35,6 +36,8 @@ export const fetchUserProfile = createAsyncThunk("user/fetchUserProfile", async 
                 },
             }
         );
+        //on retourne les données de l'utilisateur dans le reducer user userData
+        thunkAPI.dispatch(setUserProfile(response.data.body));
         //on retourne les données du profil user
         return response.data.body;
     } catch (error) {
