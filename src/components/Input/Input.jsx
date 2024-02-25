@@ -1,10 +1,10 @@
 import "./Input.scss";
 
-function Input({ wrapperClass, labelFor, labelText, inputType, inputId, onChange, name, value }) {
+function Input({ wrapperClass, labelFor, labelText, name, inputType, inputId, autoComplete, onChange }) {
     return (
         <div className={wrapperClass}>
             <label htmlFor={labelFor}>{labelText}</label>
-            <input type={inputType} id={inputId} onChange={onChange} name={name} value={value} />
+            <input name={name} type={inputType} id={inputId} autoComplete={autoComplete} onChange={onChange} />
         </div>
     );
 }

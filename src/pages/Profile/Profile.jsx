@@ -30,11 +30,19 @@ function Profile() {
         try {
             await dispatch(updateUserName({ token, newFirstName, newLastName })).unwrap();
             setDisplay(true);
+            setNewFirstName("");
+            setNewLastName("");
         } catch (error) {
             console.error("Failed to update username : ", error);
         } finally {
             setIsUpdating(false);
         }
+    };
+
+    const handleCancel = () => {
+        setNewFirstName("");
+        setNewLastName("");
+        setDisplay(true);
     };
 
     return (
@@ -58,19 +66,18 @@ function Profile() {
                             <h1>Welcome back</h1>
                             <form onSubmit={handleSubmit}>
                                 <div>
-                                    <label htmlFor="firstname">First Name:</label>
-                                    <input type="text" id="firstname" value={newFirstName} onChange={(e) => setNewFirstName(e.target.value)} disabled={isUpdating} />
+                                    <label htmlFor="firstname"></label>
+                                    <input type="text" id="firstname" value={newFirstName} placeholder={userData.firstName} onChange={(e) => setNewFirstName(e.target.value)} disabled={isUpdating} />
                                 </div>
                                 <div>
-                                    <label htmlFor="lastname">Last Name:</label>
-                                    <input type="text" id="lastname" value={newLastName} onChange={(e) => setNewLastName(e.target.value)} disabled={isUpdating} />
+                                    <label htmlFor="lastname"></label>
+                                    <input type="text" id="lastname" value={newLastName} placeholder={userData.lastName} onChange={(e) => setNewLastName(e.target.value)} disabled={isUpdating} />
                                 </div>
-
                                 <div>
                                     <button type="submit" disabled={isUpdating}>
                                         Save
                                     </button>
-                                    <button type="button" onClick={() => setDisplay(!display)} disabled={isUpdating}>
+                                    <button type="button" onClick={handleCancel} disabled={isUpdating}>
                                         Cancel
                                     </button>
                                 </div>

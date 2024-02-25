@@ -58,8 +58,8 @@ function SignIn() {
                     <FontAwesomeIcon className="sign-in-icon" icon={faUserCircle} />
                     <h1>Sign In</h1>
                     <form onSubmit={handleSubmit}>
-                        <Input wrapperClass={"input-wrapper"} name="email" labelFor={"email"} labelText={"Email"} inputType={"text"} inputId={"email"} onChange={(e) => setEmail(e.target.value)} />
-                        <Input wrapperClass={"input-wrapper"} name="password" labelFor={"password"} labelText={"Password"} inputType={"password"} inputId={"password"} onChange={(e) => setPassword(e.target.value)} />
+                        <Input wrapperClass={"input-wrapper"} labelFor={"email"} labelText={"Email"} name="email" inputType={"text"} inputId={"email"} autoComplete={"argentbank@mail.com"} onChange={(e) => setEmail(e.target.value)} />
+                        <Input wrapperClass={"input-wrapper"} labelFor={"password"} labelText={"Password"} name="password" inputType={"password"} inputId={"password"} autoComplete={"new-password"} onChange={(e) => setPassword(e.target.value)} />
                         <Input wrapperClass={"input-remember"} labelFor={"remember-me"} labelText={"Remember me"} inputType={"checkbox"} inputId={"remember-me"} />
                         {errorMessage && <p className="error-message">{errorMessage}</p>}
                         <button type="submit" className="sign-in-button">

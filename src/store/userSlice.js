@@ -19,9 +19,6 @@ export const userSlice = createSlice({
             //màj des données user
             state.userData = action.payload;
         },
-        resetUser: (state) => {
-            state.userData = {};
-        },
     },
     extraReducers: (builder) => {
         builder
@@ -39,6 +36,6 @@ export const userSlice = createSlice({
     },
 });
 
-export const { setUserProfile, resetUser } = userSlice.actions;
+export const { setUserProfile } = userSlice.actions;
 
 export default userSlice.reducer;
