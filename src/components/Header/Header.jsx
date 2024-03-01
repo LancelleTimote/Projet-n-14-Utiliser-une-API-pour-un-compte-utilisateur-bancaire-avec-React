@@ -29,12 +29,12 @@ function Header() {
                 </Link>
                 {isLoggedIn ? (
                     <div>
-                        <Link to="/profile">
+                        <Link to="/profile" className="main-nav-item">
                             <FontAwesomeIcon icon={faUserCircle} className="main-nav-item-icon" />
                             {username}
                         </Link>
-                        <Link to="/" onClick={logoutHandler}>
-                            <FontAwesomeIcon icon={faRightFromBracket} />
+                        <Link to="/" className="main-nav-item" onClick={logoutHandler}>
+                            <FontAwesomeIcon icon={faRightFromBracket} className="main-nav-item-icon" />
                             Sign Out
                         </Link>
                     </div>

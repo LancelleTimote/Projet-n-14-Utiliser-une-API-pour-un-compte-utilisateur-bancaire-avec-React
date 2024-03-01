@@ -1,14 +1,46 @@
 @import "../../style/Utils/Variables.scss";
 
-.edit-button {
+.edit-button,
+.form_containerButton_submit,
+.form_containerButton_cancel {
     border-color: $secondary-color;
     background-color: $secondary-color;
     color: $primary-color;
     font-weight: bold;
+}
+
+.edit-button {
     padding: 10px;
 }
 
 .header {
     color: $primary-color;
     margin-bottom: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    &_containerInput,
+    &_containerButton {
+        display: flex;
+        gap: 15px;
+    }
+    &_containerInput {
+        &_inputFN,
+        &_inputLN {
+            height: 20px;
+            width: 9rem;
+            padding: 7px;
+        }
+    }
+    &_containerButton {
+        &_submit,
+        &_cancel {
+            height: 30px;
+            width: 6rem;
+        }
+    }
 }

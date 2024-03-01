@@ -46,7 +46,7 @@ function Profile() {
     };
 
     return (
-        <div>
+        <div className="main flex">
             <Header />
             <div className="main bg-dark">
                 <div className="header">
@@ -64,20 +64,22 @@ function Profile() {
                     ) : (
                         <div>
                             <h1>Welcome back</h1>
-                            <form onSubmit={handleSubmit}>
-                                <div>
-                                    <label htmlFor="firstname"></label>
-                                    <input type="text" id="firstname" value={newFirstName} placeholder={userData.firstName} onChange={(e) => setNewFirstName(e.target.value)} disabled={isUpdating} />
+                            <form className="form" onSubmit={handleSubmit}>
+                                <div className="form_containerInput">
+                                    <div>
+                                        <label htmlFor="firstname"></label>
+                                        <input className="form_containerInput_inputFN" type="text" id="firstname" value={newFirstName} placeholder={userData.firstName} onChange={(e) => setNewFirstName(e.target.value)} disabled={isUpdating} />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="lastname"></label>
+                                        <input className="form_containerInput_inputLN" type="text" id="lastname" value={newLastName} placeholder={userData.lastName} onChange={(e) => setNewLastName(e.target.value)} disabled={isUpdating} />
+                                    </div>
                                 </div>
-                                <div>
-                                    <label htmlFor="lastname"></label>
-                                    <input type="text" id="lastname" value={newLastName} placeholder={userData.lastName} onChange={(e) => setNewLastName(e.target.value)} disabled={isUpdating} />
-                                </div>
-                                <div>
-                                    <button type="submit" disabled={isUpdating}>
+                                <div className="form_containerButton">
+                                    <button className="form_containerButton_submit" type="submit" disabled={isUpdating}>
                                         Save
                                     </button>
-                                    <button type="button" onClick={handleCancel} disabled={isUpdating}>
+                                    <button className="form_containerButton_cancel" type="button" onClick={handleCancel} disabled={isUpdating}>
                                         Cancel
                                     </button>
                                 </div>
