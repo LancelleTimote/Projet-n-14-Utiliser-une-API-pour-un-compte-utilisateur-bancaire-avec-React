@@ -7,10 +7,8 @@ function ErrorPage() {
     return (
         <div className="errorPage">
             <Header />
-            <div className="errorPage_mid">
-                <Footer />
-                <Error />
-            </div>
+            <Error />
+            <Footer />
         </div>
     );
 }
