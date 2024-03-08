@@ -26,7 +26,6 @@ function SignIn() {
 
         try {
             const rememberMe = document.getElementById("remember-me").checked;
-            console.log("Remember Me coché:", rememberMe);
 
             //appel du thunk loginUser pour la co
             const response = await dispatch(loginUser({ email, password })).unwrap();

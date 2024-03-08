@@ -9,8 +9,6 @@ export const loginUser = createAsyncThunk("auth/loginUser", async ({ email, pass
         //envoi requête co à l'API
         const response = await axios.post("http://localhost:3001/api/v1/user/login", { email, password });
 
-        console.log("Token retourné dans le login : ", response.data.body.token);
-
         //sauvegarde du token dans le state redux
         thunkAPI.dispatch(setToken(response.data.body.token));
 
